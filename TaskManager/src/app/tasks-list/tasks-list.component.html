@@ -1,0 +1,5 @@
+<ul>
+    @for(task of tasks; track $index) {
+    <app-single-task (onDelete)="deleteTask($event)" [task]="task" [index]="$index"></app-single-task>
+    }
+</ul>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, WritableSignal, effect, signal } from '@angular/core';
 import { ActionsComponent } from '../actions/actions.component';
 import { TasksListComponent } from '../tasks-list/tasks-list.component';
 import { SummaryComponent } from '../summary/summary.component';
@@ -12,13 +12,19 @@ import { Task } from '../types';
   styleUrl: './manager.component.scss'
 })
 export class ManagerComponent {
-  tasks: Task[] = [];
+  tasks: WritableSignal<Task[]> = signal([]);
+
+  constructor() {
+    effect(() => {
+      console.log(`Aktualizacja tablicy zadań, nowa ilość elementów: ${this.tasks().length}`);
+    })
+  }
 
   addNewTask(taskName: string) {
-    this.tasks.push(taskName);
+    this.tasks.update(prevTasks => [...prevTasks, taskName]);
   }
 
   deleteTask(indexToDelete: number) {
-    this.tasks = this.tasks.filter((task, index) => index !== indexToDelete);
+    this.tasks.update(prevTasks => prevTasks.filter((task, index) => index !== indexToDelete));
   }
 }

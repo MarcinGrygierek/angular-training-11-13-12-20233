@@ -4,11 +4,21 @@ import { RouterOutlet } from '@angular/router';
 import { NumbersComponent } from './numbers/numbers.component';
 import { TestButtonComponent } from './test-button/test-button.component';
 import { SignalNumbersComponent } from './signal-numbers/signal-numbers.component';
+import { DirectivesOldComponent } from './directives-old/directives-old.component';
+import { NewDirectivesComponent } from './new-directives/new-directives.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NumbersComponent, TestButtonComponent, SignalNumbersComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NumbersComponent,
+    TestButtonComponent,
+    SignalNumbersComponent,
+    DirectivesOldComponent,
+    NewDirectivesComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

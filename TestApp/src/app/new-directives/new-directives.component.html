@@ -1,0 +1,37 @@
+<button (click)="toggle()">Toggle visibility</button>
+
+@if(isVisible) {
+<div>
+    TOP SECRET CONTENT
+</div>
+} @else {
+<p>Nie masz dostępu!</p>
+}
+
+<ul>
+    @for(value of values; track $index) {
+    <li>{{ value }}</li>
+    }
+</ul>
+
+@switch(userRole) {
+@case('admin') {
+<p>Jesteś administratorem</p>
+}
+@case('user') {
+<p>Jesteś użytkownikiem</p>
+}
+@case('mod') {
+<p>Jesteś moderatorem</p>
+}
+}
+
+@defer(on timer(5s)) {
+<div>I am deferred!</div>
+}
+@loading(after 1s; minimum 2s) {
+<div>I am loading myself</div>
+}
+@placeholder {
+<div>I am placeholder</div>
+}

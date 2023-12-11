@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NumbersComponent } from './numbers/numbers.component';
 import { TestButtonComponent } from './test-button/test-button.component';
+import { SignalNumbersComponent } from './signal-numbers/signal-numbers.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NumbersComponent, TestButtonComponent],
+  imports: [CommonModule, RouterOutlet, NumbersComponent, TestButtonComponent, SignalNumbersComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

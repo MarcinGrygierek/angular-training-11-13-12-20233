@@ -22,5 +22,4 @@ export class NumbersComponent {
 
   @Input()
   secondArray: number[] = [];
-
 }

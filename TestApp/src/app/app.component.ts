@@ -6,6 +6,7 @@ import { TestButtonComponent } from './test-button/test-button.component';
 import { SignalNumbersComponent } from './signal-numbers/signal-numbers.component';
 import { DirectivesOldComponent } from './directives-old/directives-old.component';
 import { NewDirectivesComponent } from './new-directives/new-directives.component';
+import { LifecyclesContainerComponent } from './lifecycles-container/lifecycles-container.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { NewDirectivesComponent } from './new-directives/new-directives.componen
     TestButtonComponent,
     SignalNumbersComponent,
     DirectivesOldComponent,
-    NewDirectivesComponent
+    NewDirectivesComponent,
+    LifecyclesContainerComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

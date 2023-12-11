@@ -10,7 +10,9 @@
 
 <ul>
     @for(value of values; track $index) {
-        <li>{{ value }}</li>
+        @if(value % 2 === 0) {
+            <li>{{ value }}</li>
+        }
     }
 </ul>
 

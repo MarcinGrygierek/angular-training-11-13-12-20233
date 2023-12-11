@@ -1,0 +1,7 @@
+<button (click)="toggle()">Toggle</button>
+<button (click)="addValueByMutation()">Add by mutation</button>
+<button (click)="addValueByCopy()">Add by copy</button>
+
+@if(isVisible) {
+    <app-lifecycles [values]="values"></app-lifecycles>
+}

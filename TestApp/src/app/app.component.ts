@@ -9,6 +9,7 @@ import { NewDirectivesComponent } from './new-directives/new-directives.componen
 import { LifecyclesContainerComponent } from './lifecycles-container/lifecycles-container.component';
 import { DetectionTestComponent } from './detection-test/detection-test.component';
 import { DetectionContainerComponent } from './detection-container/detection-container.component';
+import { PageWrapperComponent } from './page-wrapper/page-wrapper.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { DetectionContainerComponent } from './detection-container/detection-con
     NewDirectivesComponent,
     LifecyclesContainerComponent,
     DetectionTestComponent,
-    DetectionContainerComponent
+    DetectionContainerComponent,
+    PageWrapperComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

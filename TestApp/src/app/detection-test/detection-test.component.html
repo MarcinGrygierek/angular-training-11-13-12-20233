@@ -1,0 +1,13 @@
+<p>{{ value }}</p>
+<ul>
+    @for(value of values; track $index) {
+    <li>{{ value }}</li>
+    }
+</ul>
+<strong>{{ randomValue }}</strong>
+<div>
+    <button (click)="getRandomValue()">Generate new random value</button>
+</div>
+<div>
+    <button (click)="addValueFromParent()">Add value from parent</button>
+</div>

@@ -1,0 +1,10 @@
+<ul>
+    @for(item of items; track item.id) {
+        <!-- <li>
+            {{ item.name }} <small>({{item.id}})</small>
+            <button (click)="changeItemName(item.id)">Zmień nazwę</button>
+        </li> -->
+        <app-detection-test-single [item]="item"></app-detection-test-single>
+        <button (click)="changeItemName(item.id)">Zmień nazwę</button>
+    }
+</ul>

@@ -1,0 +1,7 @@
+<div>
+    @if(hasErrors()) {
+        @if(getErrors()['required']) {<p>Pole jest wymagane</p>}
+        @if(getErrors()['email']) {<p>Podany email jest niepoprawny</p>}
+        @if(getErrors()['minlength']) {<p>Podana wartość jest za krótka</p>}
+    }
+</div>

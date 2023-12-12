@@ -1,0 +1,5 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-input name="login" type="email" [group]="form"></app-input>
+    <app-input name="password" type="password" [group]="form"></app-input>
+    <button type="submit" [disabled]="form.invalid">Wyślij</button>
+</form>

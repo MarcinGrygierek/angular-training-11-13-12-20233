@@ -15,6 +15,7 @@ import { ConditionalProjectionComponent } from './conditional-projection/conditi
 import { TemplateVariableParentComponent } from './template-variable-parent/template-variable-parent.component';
 import { PipesTestComponent } from './pipes-test/pipes-test.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +37,7 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     TemplateVariableParentComponent,
     PipesTestComponent,
     TemplateDrivenFormComponent,
+    ReactiveFormComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

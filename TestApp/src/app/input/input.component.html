@@ -1,0 +1,4 @@
+<div [formGroup]="group">
+    <input [formControlName]="name" [type]="type">
+    <app-input-errors [control]="group.get(name)"></app-input-errors>
+</div>

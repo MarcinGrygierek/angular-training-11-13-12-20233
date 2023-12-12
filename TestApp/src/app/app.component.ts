@@ -17,6 +17,7 @@ import { PipesTestComponent } from './pipes-test/pipes-test.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { RxTestComponent } from './rx-test/rx-test.component';
+import { RxTest2Component } from './rx-test2/rx-test2.component';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,8 @@ import { RxTestComponent } from './rx-test/rx-test.component';
     PipesTestComponent,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
-    RxTestComponent
+    RxTestComponent,
+    RxTest2Component
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

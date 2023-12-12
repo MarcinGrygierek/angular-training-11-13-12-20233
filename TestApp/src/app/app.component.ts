@@ -16,6 +16,7 @@ import { TemplateVariableParentComponent } from './template-variable-parent/temp
 import { PipesTestComponent } from './pipes-test/pipes-test.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { RxTestComponent } from './rx-test/rx-test.component';
 
 @Component({
   selector: 'app-root',
@@ -37,7 +38,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     TemplateVariableParentComponent,
     PipesTestComponent,
     TemplateDrivenFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    RxTestComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

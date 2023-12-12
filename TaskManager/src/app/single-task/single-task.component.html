@@ -1,4 +1,12 @@
 <li>
-    {{ task }}
-    <button (click)="deleteTask(index)">Delete</button>
+    @if(task.done) { X }
+    {{ task.name }}
+    <button (click)="deleteTask(task.id)">Delete</button>
+    <button (click)="toggleTaskDone(task.id)">
+        @if(task.done) {
+            Undone
+        } @else {
+            Done
+        }
+    </button>
 </li>

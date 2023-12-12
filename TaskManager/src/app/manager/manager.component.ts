@@ -1,4 +1,4 @@
-import { Component, WritableSignal, effect, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, WritableSignal, effect, signal } from '@angular/core';
 import { ActionsComponent } from '../actions/actions.component';
 import { TasksListComponent } from '../tasks-list/tasks-list.component';
 import { SummaryComponent } from '../summary/summary.component';
@@ -9,7 +9,8 @@ import { Task } from '../types';
   standalone: true,
   imports: [ActionsComponent, TasksListComponent, SummaryComponent],
   templateUrl: './manager.component.html',
-  styleUrl: './manager.component.scss'
+  styleUrl: './manager.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ManagerComponent {
   tasks: WritableSignal<Task[]> = signal([]);
@@ -21,10 +22,25 @@ export class ManagerComponent {
   }
 
   addNewTask(taskName: string) {
-    this.tasks.update(prevTasks => [...prevTasks, taskName]);
+    const newTask: Task = {
+      id: new Date().getTime(),
+      done: false,
+      name: taskName
+    }
+    this.tasks.update(prevTasks => [...prevTasks, newTask]);
   }
 
-  deleteTask(indexToDelete: number) {
-    this.tasks.update(prevTasks => prevTasks.filter((task, index) => index !== indexToDelete));
+  deleteTask(idToDelete: number) {
+    this.tasks.update(prevTasks => prevTasks.filter((task) => task.id !== idToDelete));
+  }
+
+  toggleTaskDone(idToChange: number) {
+    this.tasks.update(prevTasks => prevTasks.map(task => {
+      if(idToChange === task.id) return {
+        ...task,
+        done: !task.done
+      }
+      return task
+    }))
   }
 }

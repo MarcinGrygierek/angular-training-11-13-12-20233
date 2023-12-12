@@ -1,3 +1,3 @@
 <app-summary [count]="tasks().length"></app-summary>
 <app-actions (onCallback)="addNewTask($event)"></app-actions>
-<app-tasks-list [tasks]="tasks()" (onDelete)="deleteTask($event)"></app-tasks-list>
+<app-tasks-list [tasks]="tasks()" (onDelete)="deleteTask($event)" (onDone)="toggleTaskDone($event)"></app-tasks-list>

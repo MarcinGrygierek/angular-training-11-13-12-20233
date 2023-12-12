@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../types';
 import { SingleTaskComponent } from '../single-task/single-task.component';
 
@@ -7,7 +7,8 @@ import { SingleTaskComponent } from '../single-task/single-task.component';
   standalone: true,
   imports: [SingleTaskComponent],
   templateUrl: './tasks-list.component.html',
-  styleUrl: './tasks-list.component.scss'
+  styleUrl: './tasks-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TasksListComponent {
   @Input()
@@ -16,7 +17,14 @@ export class TasksListComponent {
   @Output()
   onDelete = new EventEmitter<number>();
 
-  deleteTask(indexToDelete: number) {
-    this.onDelete.emit(indexToDelete);
+  @Output()
+  onDone = new EventEmitter<number>();
+
+  deleteTask(idToDelete: number) {
+    this.onDelete.emit(idToDelete);
+  }
+
+  toggleTaskDone(idToChange: number) {
+    this.onDone.emit(idToChange);
   }
 }

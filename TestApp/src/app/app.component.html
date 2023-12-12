@@ -22,12 +22,20 @@
 
 <!-- <app-detection-container></app-detection-container> -->
 
-<app-page-wrapper title="Tytuł podstrony">
+<!-- <app-page-wrapper title="Tytuł podstrony">
   <h2 header>Jestem podtytułem</h2>
   <section>Jestem pojedynczą podstroną</section>
-</app-page-wrapper>
+</app-page-wrapper> -->
 
 <!-- Zawartość projekcji pozostaje cały czas zainicjalizowana, nawet jak ng-content warunkowo jest ukryte -->
-<app-conditional-projection>
+<!-- <app-conditional-projection>
   <app-lifecycles [values]="[1, 2, 3]"></app-lifecycles>
-</app-conditional-projection>
+</app-conditional-projection> -->
+
+<!-- <ng-template #temp>
+  <app-lifecycles [values]="[1, 2, 3]"></app-lifecycles>
+</ng-template> -->
+
+<!-- Zawartość ng-template zostanie zainicjalizowana dopiero w momencie wykorzystania szablonu -->
+<!-- <ng-container *ngTemplateOutlet="temp"></ng-container> -->
+<app-template-variable-parent></app-template-variable-parent>

@@ -12,6 +12,7 @@ import { DetectionContainerComponent } from './detection-container/detection-con
 import { PageWrapperComponent } from './page-wrapper/page-wrapper.component';
 import { LifecyclesComponent } from './lifecycles/lifecycles.component';
 import { ConditionalProjectionComponent } from './conditional-projection/conditional-projection.component';
+import { TemplateVariableParentComponent } from './template-variable-parent/template-variable-parent.component';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { ConditionalProjectionComponent } from './conditional-projection/conditi
     DetectionContainerComponent,
     PageWrapperComponent,
     LifecyclesComponent,
-    ConditionalProjectionComponent
+    ConditionalProjectionComponent,
+    TemplateVariableParentComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

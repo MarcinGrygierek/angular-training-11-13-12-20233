@@ -10,6 +10,8 @@ import { LifecyclesContainerComponent } from './lifecycles-container/lifecycles-
 import { DetectionTestComponent } from './detection-test/detection-test.component';
 import { DetectionContainerComponent } from './detection-container/detection-container.component';
 import { PageWrapperComponent } from './page-wrapper/page-wrapper.component';
+import { LifecyclesComponent } from './lifecycles/lifecycles.component';
+import { ConditionalProjectionComponent } from './conditional-projection/conditional-projection.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,9 @@ import { PageWrapperComponent } from './page-wrapper/page-wrapper.component';
     LifecyclesContainerComponent,
     DetectionTestComponent,
     DetectionContainerComponent,
-    PageWrapperComponent
+    PageWrapperComponent,
+    LifecyclesComponent,
+    ConditionalProjectionComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -13,6 +13,8 @@ import { PageWrapperComponent } from './page-wrapper/page-wrapper.component';
 import { LifecyclesComponent } from './lifecycles/lifecycles.component';
 import { ConditionalProjectionComponent } from './conditional-projection/conditional-projection.component';
 import { TemplateVariableParentComponent } from './template-variable-parent/template-variable-parent.component';
+import { PipesTestComponent } from './pipes-test/pipes-test.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +33,9 @@ import { TemplateVariableParentComponent } from './template-variable-parent/temp
     PageWrapperComponent,
     LifecyclesComponent,
     ConditionalProjectionComponent,
-    TemplateVariableParentComponent
+    TemplateVariableParentComponent,
+    PipesTestComponent,
+    TemplateDrivenFormComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

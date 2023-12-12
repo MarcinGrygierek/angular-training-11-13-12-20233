@@ -1,0 +1,9 @@
+<form #form="ngForm" (ngSubmit)="onSubmit($event)">
+    <input name="login" [(ngModel)]="login" required #loginInput="ngModel">
+    <button type="submit">Wyślij</button>
+</form>
+<pre>
+    @if(!loginInput.valid) {
+        Pole jest niepoprawnie wypełnione
+    }
+</pre>

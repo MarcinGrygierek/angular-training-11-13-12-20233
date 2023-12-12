@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { TemplateVariableChildComponent } from '../template-variable-child/template-variable-child.component';
 
 @Component({
@@ -10,5 +10,17 @@ import { TemplateVariableChildComponent } from '../template-variable-child/templ
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TemplateVariableParentComponent {
+  @ViewChild('child')
+  childRef!: TemplateVariableChildComponent;
 
+  @ViewChildren(TemplateVariableChildComponent)
+  childrenRefs!: QueryList<TemplateVariableChildComponent>
+
+  randomize() {
+   this.childRef.randomize();
+  }
+
+  randomizeAll() {
+    this.childrenRefs.forEach(el => el.randomize())
+  }
 }

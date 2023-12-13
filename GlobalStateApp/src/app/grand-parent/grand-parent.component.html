@@ -1,0 +1,6 @@
+<app-parent></app-parent>
+<ul>
+    @for(number of (numbers | async); track $index) {
+    <li>{{ number }}</li>
+    }
+</ul>

@@ -1,12 +1,21 @@
 <li>
-    @if(task.done) { X }
-    {{ task.name }}
-    <button (click)="deleteTask(task.id)">Delete</button>
-    <button (click)="toggleTaskDone(task.id)">
-        @if(task.done) {
-            Undone
-        } @else {
-            Done
-        }
-    </button>
+    <small>[{{ task | status }}]</small>
+    
+    @if(!isEdit) {
+        {{ task.name }}
+        <button (click)="deleteTask(task.id)">Delete</button>
+        <button (click)="toggleTaskDone(task.id)">
+            @if(task.done) {
+                Undone
+            } @else {
+                Done
+            }
+        </button>
+        <button (click)="toggleEdit()">Edytuj</button>
+    } @else {
+        <form (ngSubmit)="saveChange()" [formGroup]="form">
+            <input type="text" formControlName="name">
+            <button type="submit" [disabled]="form.invalid">Save</button>
+        </form>
+    }
 </li>

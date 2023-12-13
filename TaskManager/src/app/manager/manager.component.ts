@@ -2,12 +2,13 @@ import { ChangeDetectionStrategy, Component, WritableSignal, effect, signal } fr
 import { ActionsComponent } from '../actions/actions.component';
 import { TasksListComponent } from '../tasks-list/tasks-list.component';
 import { SummaryComponent } from '../summary/summary.component';
-import { Task } from '../types';
+import { Task, TaskNameChangeReq } from '../types';
+import { PageContainerComponent } from '../page-container/page-container.component';
 
 @Component({
   selector: 'app-manager',
   standalone: true,
-  imports: [ActionsComponent, TasksListComponent, SummaryComponent],
+  imports: [ActionsComponent, TasksListComponent, SummaryComponent, PageContainerComponent],
   templateUrl: './manager.component.html',
   styleUrl: './manager.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -39,6 +40,16 @@ export class ManagerComponent {
       if(idToChange === task.id) return {
         ...task,
         done: !task.done
+      }
+      return task
+    }))
+  }
+
+  changeTaskName({ id, newName}: TaskNameChangeReq) {
+    this.tasks.update(prevTasks => prevTasks.map(task => {
+      if(id === task.id) return {
+        ...task,
+        name: newName
       }
       return task
     }))

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Task } from '../types';
+import { Task, TaskNameChangeReq } from '../types';
 import { SingleTaskComponent } from '../single-task/single-task.component';
 
 @Component({
@@ -20,11 +20,18 @@ export class TasksListComponent {
   @Output()
   onDone = new EventEmitter<number>();
 
+  @Output()
+  onChange = new EventEmitter<TaskNameChangeReq>();
+
   deleteTask(idToDelete: number) {
     this.onDelete.emit(idToDelete);
   }
 
   toggleTaskDone(idToChange: number) {
     this.onDone.emit(idToChange);
+  }
+
+  changeTaskName(req: TaskNameChangeReq) {
+    this.onChange.emit(req);
   }
 }

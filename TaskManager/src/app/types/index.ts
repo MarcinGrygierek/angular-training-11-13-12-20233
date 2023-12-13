@@ -8,3 +8,8 @@ export interface Task {
     name: string;
     done: boolean;
 }
+
+export interface TaskNameChangeReq { 
+    id: number;
+    newName: string;
+}

@@ -1,5 +1,10 @@
 <ul>
     @for(task of tasks; track task.id) {
-    <app-single-task (onDelete)="deleteTask($event)" (onDone)="toggleTaskDone($event)" [task]="task"></app-single-task>
+        <app-single-task 
+            (onDelete)="deleteTask($event)" 
+            (onDone)="toggleTaskDone($event)" 
+            (onChange)="changeTaskName($event)" 
+            [task]="task"
+        ></app-single-task>
     }
 </ul>

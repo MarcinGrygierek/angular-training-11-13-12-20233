@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleTaskComponent } from './single-task.component';
-import { Task } from '../../types';
+import { HomePageComponent } from './home-page.component';
 
-describe('SingleTaskComponent', () => {
-  let component: SingleTaskComponent;
-  let fixture: ComponentFixture<SingleTaskComponent>;
+describe('HomePageComponent', () => {
+  let component: HomePageComponent;
+  let fixture: ComponentFixture<HomePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SingleTaskComponent]
+      imports: [HomePageComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SingleTaskComponent);
+    fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

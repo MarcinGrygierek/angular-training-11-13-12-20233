@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleTaskComponent } from './single-task.component';
-import { Task } from '../../types';
+import { ErrorPageComponent } from './error-page.component';
 
-describe('SingleTaskComponent', () => {
-  let component: SingleTaskComponent;
-  let fixture: ComponentFixture<SingleTaskComponent>;
+describe('ErrorPageComponent', () => {
+  let component: ErrorPageComponent;
+  let fixture: ComponentFixture<ErrorPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SingleTaskComponent]
+      imports: [ErrorPageComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SingleTaskComponent);
+    fixture = TestBed.createComponent(ErrorPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

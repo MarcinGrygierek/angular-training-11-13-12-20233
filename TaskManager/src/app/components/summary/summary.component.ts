@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 })
 export class SummaryComponent {
   count = computed(() => this.taskService.tasks().length);
+  openedCount = computed(() => this.taskService.tasks().filter(task => !task.done).length);
+  closedCount = computed(() => this.taskService.tasks().filter(task => task.done).length);
 
   constructor(private taskService: TaskService) {}
 }

@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleTaskComponent } from './single-task.component';
-import { Task } from '../../types';
+import { NavigationComponent } from './navigation.component';
 
-describe('SingleTaskComponent', () => {
-  let component: SingleTaskComponent;
-  let fixture: ComponentFixture<SingleTaskComponent>;
+describe('NavigationComponent', () => {
+  let component: NavigationComponent;
+  let fixture: ComponentFixture<NavigationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SingleTaskComponent]
+      imports: [NavigationComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SingleTaskComponent);
+    fixture = TestBed.createComponent(NavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

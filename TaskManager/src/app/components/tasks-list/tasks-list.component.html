@@ -1,5 +1,5 @@
 <ul>
-    @for(task of (tasks | async); track task.id) {
+    @for(task of tasks(); track task.id) {
         <app-single-task 
             [task]="task"
         ></app-single-task>

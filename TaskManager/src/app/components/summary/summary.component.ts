@@ -1,6 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed } from '@angular/core';
 import { TaskService } from '../../services/task.service';
-import { map } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,9 +11,7 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SummaryComponent {
-  count = this.taskService.tasks.pipe(
-    map(tasks => tasks.length)
-  )
+  count = computed(() => this.taskService.tasks().length);
 
   constructor(private taskService: TaskService) {}
 }

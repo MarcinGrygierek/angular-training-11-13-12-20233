@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, WritableSignal, signal } from '@angular/core';
 import { Task, TaskNameChangeReq } from '../types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  private _tasks = new BehaviorSubject<Task[]>([]);
-  tasks = this._tasks.asObservable();
+  private _tasks: WritableSignal<Task[]> = signal([]);
+  tasks = this._tasks.asReadonly();
 
   addNewTask(taskName: string) {
     const newTask: Task = {
@@ -15,18 +14,15 @@ export class TaskService {
       done: false,
       name: taskName
     }
-    const currentTasks = this._tasks.getValue();
-    this._tasks.next([...currentTasks, newTask]);
+    this._tasks.update(currentTasks => [...currentTasks, newTask]);
   }
 
   deleteTask(idToDelete: number) {
-    const currentTasks = this._tasks.getValue();
-    this._tasks.next(currentTasks.filter((task) => task.id !== idToDelete));
+    this._tasks.update(currentTasks => currentTasks.filter((task) => task.id !== idToDelete));
   }
 
   toggleTaskDone(idToChange: number) {
-    const currentTasks = this._tasks.getValue();
-    this._tasks.next(currentTasks.map(task => {
+    this._tasks.update(currentTasks => currentTasks.map(task => {
       if(idToChange === task.id) return {
         ...task,
         done: !task.done
@@ -36,8 +32,7 @@ export class TaskService {
   }
 
   changeTaskName({ id, newName}: TaskNameChangeReq) {
-    const currentTasks = this._tasks.getValue();
-    this._tasks.next(currentTasks.map(task => {
+    this._tasks.update(currentTasks => currentTasks.map(task => {
       if(id === task.id) return {
         ...task,
         name: newName

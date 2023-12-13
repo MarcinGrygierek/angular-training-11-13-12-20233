@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { Task, TaskNameChangeReq } from '../types';
-import { StatusPipe } from '../status.pipe';
+import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Task } from '../../types';
+import { StatusPipe } from '../../pipes/status.pipe';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-single-task',
@@ -15,18 +16,9 @@ export class SingleTaskComponent implements OnInit {
   @Input()
   task!: Task;
 
-  @Output()
-  onDelete = new EventEmitter<number>();
-
-  @Output()
-  onDone = new EventEmitter<number>();
-
-  @Output()
-  onChange = new EventEmitter<TaskNameChangeReq>();
-
   isEdit = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private taskService: TaskService) {}
 
   form!: FormGroup;
 
@@ -37,23 +29,20 @@ export class SingleTaskComponent implements OnInit {
   }
 
   deleteTask(idToDelete: number) {
-    this.onDelete.emit(idToDelete);
+    this.taskService.deleteTask(idToDelete);
   }
 
   toggleTaskDone(idToChange: number) {
-    this.onDone.emit(idToChange);
+    this.taskService.toggleTaskDone(idToChange);
   }
 
   toggleEdit() {
     this.isEdit = true;
-    // this.form.setValue({
-    //   name: this.task.name
-    // })
   }
 
   saveChange() {
     if(!this.form.value.name) return;
-    this.onChange.emit({ id: this.task.id, newName: this.form.value.name });
+    this.taskService.changeTaskName({ id: this.task.id, newName: this.form.value.name });
     this.isEdit = false;
   }
 }

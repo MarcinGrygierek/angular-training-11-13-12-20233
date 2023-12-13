@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Task } from './types';
+import { Task } from '../types';
 
 @Pipe({
   name: 'status',

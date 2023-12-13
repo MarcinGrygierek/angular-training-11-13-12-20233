@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-actions',
@@ -11,18 +12,15 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
   styleUrl: './actions.component.scss'
 })
 export class ActionsComponent {
-  @Output()
-  onCallback = new EventEmitter<string>();
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private taskService: TaskService) { }
 
   form = this.fb.group({
     name: ['', Validators.required]
   })
 
   addNewTask() {
-    if(!this.form.value.name) return;
-    this.onCallback.emit(this.form.value.name);
+    if (!this.form.value.name) return;
+    this.taskService.addNewTask(this.form.value.name);
     this.form.reset();
   }
 }

@@ -1,8 +1,8 @@
 <li>
-    <small>[{{ task | status }}]</small>
+    <small data-test="status">[{{ task | status }}]</small>
     
     @if(!isEdit) {
-        {{ task.name }}
+        <span data-test="task-name">{{ task.name }}</span>
         <button (click)="deleteTask(task.id)">Delete</button>
         <button (click)="toggleTaskDone(task.id)">
             @if(task.done) {

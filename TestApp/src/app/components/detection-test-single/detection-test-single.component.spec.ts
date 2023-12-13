@@ -14,6 +14,7 @@ describe('DetectionTestSingleComponent', () => {
     
     fixture = TestBed.createComponent(DetectionTestSingleComponent);
     component = fixture.componentInstance;
+    component.item = { id: 12, name: 'test' };
     fixture.detectChanges();
   });
 

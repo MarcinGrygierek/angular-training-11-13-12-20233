@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { NumbersComponent } from './numbers/numbers.component';
-import { TestButtonComponent } from './test-button/test-button.component';
-import { SignalNumbersComponent } from './signal-numbers/signal-numbers.component';
-import { DirectivesOldComponent } from './directives-old/directives-old.component';
-import { NewDirectivesComponent } from './new-directives/new-directives.component';
-import { LifecyclesContainerComponent } from './lifecycles-container/lifecycles-container.component';
-import { DetectionTestComponent } from './detection-test/detection-test.component';
-import { DetectionContainerComponent } from './detection-container/detection-container.component';
-import { PageWrapperComponent } from './page-wrapper/page-wrapper.component';
-import { LifecyclesComponent } from './lifecycles/lifecycles.component';
-import { ConditionalProjectionComponent } from './conditional-projection/conditional-projection.component';
-import { TemplateVariableParentComponent } from './template-variable-parent/template-variable-parent.component';
-import { PipesTestComponent } from './pipes-test/pipes-test.component';
-import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { RxTestComponent } from './rx-test/rx-test.component';
-import { RxTest2Component } from './rx-test2/rx-test2.component';
+import { NumbersComponent } from './components/numbers/numbers.component';
+import { TestButtonComponent } from './components/test-button/test-button.component';
+import { SignalNumbersComponent } from './components/signal-numbers/signal-numbers.component';
+import { DirectivesOldComponent } from './components/directives-old/directives-old.component';
+import { NewDirectivesComponent } from './components/new-directives/new-directives.component';
+import { LifecyclesContainerComponent } from './components/lifecycles-container/lifecycles-container.component';
+import { DetectionTestComponent } from './components/detection-test/detection-test.component';
+import { DetectionContainerComponent } from './components/detection-container/detection-container.component';
+import { PageWrapperComponent } from './components/page-wrapper/page-wrapper.component';
+import { LifecyclesComponent } from './components/lifecycles/lifecycles.component';
+import { ConditionalProjectionComponent } from './components/conditional-projection/conditional-projection.component';
+import { TemplateVariableParentComponent } from './components/template-variable-parent/template-variable-parent.component';
+import { PipesTestComponent } from './components/pipes-test/pipes-test.component';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { RxTestComponent } from './components/rx-test/rx-test.component';
+import { RxTest2Component } from './components/rx-test2/rx-test2.component';
+import { UserDataComponent } from './components/user-data/user-data.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { SubjectTestComponent } from './components/subject-test/subject-test.component';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +44,10 @@ import { RxTest2Component } from './rx-test2/rx-test2.component';
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
     RxTestComponent,
-    RxTest2Component
+    RxTest2Component,
+    UserDataComponent, 
+    UserDetailsComponent,
+    SubjectTestComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

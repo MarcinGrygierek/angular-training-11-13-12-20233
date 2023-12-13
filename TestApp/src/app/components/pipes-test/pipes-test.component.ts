@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MoneyPipe } from '../money.pipe';
+import { MoneyPipe } from '../../pipes/money.pipe';
 
 @Component({
   selector: 'app-pipes-test',

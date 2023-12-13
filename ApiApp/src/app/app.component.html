@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+  <input formControlName="search" type="text" name="search">
+</form>
+
+<ul>
+  <!-- <li *ngFor="let result of (searchResults | async)">
+    {{ result }}
+  </li> -->
+  
+  @for(result of (searchResults | async); track $index) {
+    <li>
+      {{ result }}
+    </li>
+  }
+</ul>
